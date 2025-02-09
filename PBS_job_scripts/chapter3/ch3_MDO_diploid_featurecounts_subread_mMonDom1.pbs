@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#PBS -N subread_featurecounts
+#PBS -l select=1:ncpus=16:mem=120gb
+#PBS -l walltime=1:00:00
+#PBS -j oe
+#PBS -M ...
+#PBS -m ae
+
+cd /srv/.../MDO_diploid_mMonDom1_subread/
+
+module load subread/2.0.2
+
+##featureCounts
+featureCounts -T 16 -p --countReadPairs -C -a /srv/.../MonDom_GTF_mMomDom1.pri/genomic.gtf -o subread_fc_Hnrnpk_diploid.txt MDO_Hnrnpk_S1_combined.bam 
+featureCounts -T 16 -p --countReadPairs -C -a /srv/.../MonDom_GTF_mMomDom1.pri/genomic.gtf -o subread_fc_Ckap4_diploid.txt MDO_Ckap4_S2_combined.bam
+featureCounts -T 16 -p --countReadPairs -C -a /srv/.../MonDom_GTF_mMomDom1.pri/genomic.gtf -o subread_fc_Syncrip_diploid.txt MDO_Syncrip_S3_combined.bam
+featureCounts -T 16 -p --countReadPairs -C -a /srv/.../MonDom_GTF_mMomDom1.pri/genomic.gtf -o subread_fc_Caprin_diploid.txt MDO_Caprin_S4_combined.bam
+featureCounts -T 16 -p --countReadPairs -C -a /srv/.../MonDom_GTF_mMomDom1.pri/genomic.gtf -o subread_fc_Nono_diploid.txt MDO_Nono_S5_combined.bam
+featureCounts -T 16 -p --countReadPairs -C -a /srv/.../MonDom_GTF_mMomDom1.pri/genomic.gtf -o subread_fc_Ncl_diploid.txt MDO_Ncl_S6_combined.bam
+featureCounts -T 16 -p --countReadPairs -C -a /srv/.../MonDom_GTF_mMomDom1.pri/genomic.gtf -o subread_fc_U6_diploid.txt MDO_U6_S7_combined.bam
+featureCounts -T 16 -p --countReadPairs -C -a /srv/.../MonDom_GTF_mMomDom1.pri/genomic.gtf -o subread_fc_nude_diploid.txt MDO_nude_S8_combined.bam

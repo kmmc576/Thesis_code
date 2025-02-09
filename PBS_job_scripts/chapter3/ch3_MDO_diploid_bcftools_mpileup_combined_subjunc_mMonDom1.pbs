@@ -1,0 +1,18 @@
+#! /bin/bash
+#PBS -N MDO_did_kd_bcftools_pileup2
+#PBS -l select=1:ncpus=12:mem=120gb
+#PBS -l walltime=20:00:00
+#PBS -j oe
+#PBS -M ...
+#PBS -m ae
+ 
+
+
+module load samtools/1.14
+module load bcftools/1.14 
+
+cd /srv/.../MDO_diploid_mMonDom1_subjunc/
+
+bcftools mpileup -Ou -I -d 1200 -a FORMAT/AD,FORMAT/DP,INFO/AD -f /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/GCF_027887165.1_mMonDom1.pri_genomic.fna MDO_Caprin_S4_combined.bam MDO_Ckap4_S2_combined.bam MDO_Hnrnpk_S1_combined.bam MDO_Ncl_S6_combined.bam MDO_Nono_S5_combined.bam MDO_nude_S8_combined.bam MDO_Syncrip_S3_combined.bam MDO_U6_S7_combined.bam|
+bcftools call -Ou -c -v|
+bcftools filter -e 'FORMAT/DP<5 && QUAL<5' -Ov -o /srv/.../MDO_diploid_mpileup_combined_subjunc_mMonDom1.vcf

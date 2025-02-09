@@ -1,0 +1,91 @@
+#!/bin/bash
+
+#PBS -N MDO_diploid_knockdowns_subread_align
+#PBS -l select=1:ncpus=16:mem=160gb
+#PBS -l walltime=5:00:00
+#PBS -j oe
+#PBS -M ...
+#PBS -m ae
+
+
+cd /srv/.../MDO_diploid_knockdowns/trimmed/paired 
+
+module load subread/2.0.2
+module load samtools/1.13
+
+subread-align -t 0 -T 16 -d 30 -D 600 --sv-i /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/mMonDom1_genomic_index -r MDO_Caprin_S4_L001_R1_001_trimmed_1P.fastq.gz -R MDO_Caprin_S4_L001_R1_001_trimmed_2P.fastq.gz -o /srv/.../MDO_diploid_mMonDom1_subread/MDO_Caprin_S4_L001_align.bam
+subread-align -t 0 -T 16 -d 30 -D 600 --sv -i /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/mMonDom1_genomic_index -r MDO_Caprin_S4_L002_R1_001_trimmed_1P.fastq.gz -R MDO_Caprin_S4_L002_R1_001_trimmed_2P.fastq.gz -o /srv/.../MDO_diploid_mMonDom1_subread/MDO_Caprin_S4_L002_align.bam
+
+subread-align -t 0 -T 16 -d 30 -D 600 --sv -i /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/mMonDom1_genomic_index -r MDO_Ckap4_S2_L001_R1_001_trimmed_1P.fastq.gz -R MDO_Ckap4_S2_L001_R1_001_trimmed_2P.fastq.gz -o /srv/.../MDO_diploid_mMonDom1_subread/MDO_Ckap4_S2_L001_align.bam
+subread-align -t 0 -T 16 -d 30 -D 600 --sv -i /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/mMonDom1_genomic_index -r MDO_Ckap4_S2_L002_R1_001_trimmed_1P.fastq.gz -R MDO_Ckap4_S2_L002_R1_001_trimmed_2P.fastq.gz -o /srv/.../MDO_diploid_mMonDom1_subread/MDO_Ckap4_S2_L002_align.bam
+
+subread-align -t 0 -T 16 -d 30 -D 600 --sv -i /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/mMonDom1_genomic_index -r MDO_Hnrnpk_S1_L001_R1_001_trimmed_1P.fastq.gz -R MDO_Hnrnpk_S1_L001_R1_001_trimmed_2P.fastq.gz -o /srv/.../MDO_diploid_mMonDom1_subread/MDO_Hnrnpk_S1_L001_align.bam
+subread-align -t 0 -T 16 -d 30 -D 600 --sv -i /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/mMonDom1_genomic_index -r MDO_Hnrnpk_S1_L002_R1_001_trimmed_1P.fastq.gz -R MDO_Hnrnpk_S1_L002_R1_001_trimmed_2P.fastq.gz -o /srv/.../MDO_diploid_mMonDom1_subread/MDO_Hnrnpk_S1_L002_align.bam
+
+subread-align -t 0 -T 16 -d 30 -D 600 --sv -i /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/mMonDom1_genomic_index -r MDO_Ncl_S6_L001_R1_001_trimmed_1P.fastq.gz -R MDO_Ncl_S6_L001_R1_001_trimmed_2P.fastq.gz -o /srv/.../MDO_diploid_mMonDom1_subread/MDO_Ncl_S6_L001_align.bam
+subread-align -t 0 -T 16 -d 30 -D 600 --sv -i /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/mMonDom1_genomic_index -r MDO_Ncl_S6_L002_R1_001_trimmed_1P.fastq.gz -R MDO_Ncl_S6_L002_R1_001_trimmed_2P.fastq.gz -o /srv/.../MDO_diploid_mMonDom1_subread/MDO_Ncl_S6_L002_align.bam
+
+subread-align -t 0 -T 16 -d 30 -D 600 --sv-i /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/mMonDom1_genomic_index -r MDO_Nono_S5_L001_R1_001_trimmed_1P.fastq.gz -R MDO_Nono_S5_L001_R1_001_trimmed_2P.fastq.gz -o /srv/.../MDO_diploid_mMonDom1_subread/MDO_Nono_S5_L001_align.bam
+subread-align -t 0 -T 16 -d 30 -D 600 --sv -i /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/mMonDom1_genomic_index -r MDO_Nono_S5_L002_R1_001_trimmed_1P.fastq.gz -R MDO_Nono_S5_L002_R1_001_trimmed_2P.fastq.gz -o /srv/.../MDO_diploid_mMonDom1_subread/MDO_Nono_S5_L002_align.bam
+
+subread-align -t 0 -T 16 -d 30 -D 600 --sv -i /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/mMonDom1_genomic_index -r MDO_Syncrip_S3_L001_R1_001_trimmed_1P.fastq.gz -R MDO_Syncrip_S3_L001_R1_001_trimmed_2P.fastq.gz -o /srv/.../MDO_diploid_mMonDom1_subread/MDO_Syncrip_S3_L001_align.bam
+subread-align -t 0 -T 16 -d 30 -D 600 --sv-i /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/mMonDom1_genomic_index -r MDO_Syncrip_S3_L002_R1_001_trimmed_1P.fastq.gz -R MDO_Syncrip_S3_L002_R1_001_trimmed_2P.fastq.gz -o /srv/.../MDO_diploid_mMonDom1_subread/MDO_Syncrip_S3_L002_align.bam
+
+subread-align -t 0 -T 16 -d 30 -D 600 --sv -i /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/mMonDom1_genomic_index -r MDO_U6_S7_L001_R1_001_trimmed_1P.fastq.gz -R MDO_U6_S7_L001_R1_001_trimmed_2P.fastq.gz -o /srv/.../MDO_diploid_mMonDom1_subread/MDO_U6_S7_L001_align.bam
+subread-align -t 0 -T 16 -d 30 -D 600 --sv -i /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/mMonDom1_genomic_index -r MDO_U6_S7_L002_R1_001_trimmed_1P.fastq.gz -R MDO_U6_S7_L002_R1_001_trimmed_2P.fastq.gz -o /srv/.../MDO_diploid_mMonDom1_subread/MDO_U6_S7_L002_align.bam
+
+subread-align -t 0 -T 16 -d 30 -D 600 --sv -i /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/mMonDom1_genomic_index -r MDO_nude_S8_L001_R1_001_trimmed_1P.fastq.gz -R MDO_nude_S8_L001_R1_001_trimmed_2P.fastq.gz -o /srv/.../MDO_diploid_mMonDom1_subread/MDO_nude_S8_L001_align.bam
+subread-align -t 0 -T 16 -d 30 -D 600 --sv -i /srv/.../MonDom_GTF_mMomDom1.pri/GCF_027887165.1/mMonDom1_genomic_index -r MDO_nude_S8_L002_R1_001_trimmed_1P.fastq.gz -R MDO_nude_S8_L002_R1_001_trimmed_2P.fastq.gz -o /srv/.../MDO_diploid_mMonDom1_subread/MDO_nude_S8_L002_align.bam
+
+
+cd /srv/.../MDO_diploid_mMonDom1_subread/
+
+samtools sort MDO_Caprin_S4_L001_align.bam > MDO_Caprin_S4_L001_sorted.bam
+samtools sort MDO_Caprin_S4_L002_align.bam > MDO_Caprin_S4_L002_sorted.bam
+
+samtools sort MDO_Ckap4_S2_L001_align.bam > MDO_Ckap4_S2_L001_sorted.bam
+samtools sort MDO_Ckap4_S2_L002_align.bam > MDO_Ckap4_S2_L002_sorted.bam
+
+samtools sort MDO_Hnrnpk_S1_L001_align.bam > MDO_Hnrnpk_S1_L001_sorted.bam
+samtools sort MDO_Hnrnpk_S1_L002_align.bam > MDO_Hnrnpk_S1_L002_sorted.bam
+
+samtools sort MDO_Ncl_S6_L001_align.bam > MDO_Ncl_S6_L001_sorted.bam
+samtools sort MDO_Ncl_S6_L002_align.bam > MDO_Ncl_S6_L002_sorted.bam
+
+samtools sort MDO_Nono_S5_L001_align.bam > MDO_Nono_S5_L001_sorted.bam
+samtools sort MDO_Nono_S5_L002_align.bam > MDO_Nono_S5_L002_sorted.bam
+
+samtools sort MDO_Syncrip_S3_L001_align.bam > MDO_Syncrip_S3_L001_sorted.bam
+samtools sort MDO_Syncrip_S3_L002_align.bam > MDO_Syncrip_S3_L002_sorted.bam
+
+samtools sort MDO_U6_S7_L001_align.bam > MDO_U6_S7_L001_sorted.bam
+samtools sort MDO_U6_S7_L002_align.bam > MDO_U6_S7_L002_sorted.bam
+
+samtools sort MDO_nude_S8_L001_align.bam > MDO_nude_S8_L001_sorted.bam
+samtools sort MDO_nude_S8_L002_align.bam > MDO_nude_S8_L002_sorted.bam
+
+samtools merge -o MDO_Caprin_S4_combined.bam MDO_Caprin_S4_L001_sorted.bam MDO_Caprin_S4_L002_sorted.bam
+
+samtools merge -o MDO_Ckap4_S2_combined.bam MDO_Ckap4_S2_L001_sorted.bam MDO_Ckap4_S2_L002_sorted.bam
+
+samtools merge -o MDO_Hnrnpk_S1_combined.bam MDO_Hnrnpk_S1_L001_sorted.bam MDO_Hnrnpk_S1_L002_sorted.bam
+
+samtools merge -o MDO_Ncl_S6_combined.bam MDO_Ncl_S6_L001_sorted.bam MDO_Ncl_S6_L002_sorted.bam
+
+samtools merge -o MDO_Nono_S5_combined.bam MDO_Nono_S5_L001_sorted.bam MDO_Nono_S5_L002_sorted.bam
+
+samtools merge -o MDO_Syncrip_S3_combined.bam MDO_Syncrip_S3_L001_sorted.bam MDO_Syncrip_S3_L002_sorted.bam
+
+samtools merge -o MDO_U6_S7_combined.bam MDO_U6_S7_L001_sorted.bam MDO_U6_S7_L002_sorted.bam
+
+samtools merge -o MDO_nude_S8_combined.bam MDO_nude_S8_L001_sorted.bam MDO_nude_S8_L002_sorted.bam
+
+
+samtools index -c MDO_Caprin_S4_combined.bam
+samtools index -c MDO_Hnrnpk_S1_combined.bam
+samtools index -c MDO_nude_S8_combined.bam
+samtools index -c MDO_U6_S7_combined.bam
+samtools index -c MDO_Syncrip_S3_combined.bam
+samtools index -c MDO_Nono_S5_combined.bam
+samtools index -c MDO_Ncl_S6_combined.bam
+samtools index -c MDO_Ckap4_S2_combined.bam
